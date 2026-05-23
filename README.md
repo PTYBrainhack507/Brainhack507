@@ -1,69 +1,63 @@
-# Umbrella - A Video Plugin for Kodi
+# Brainhack — fork personal de Umbrella para Kodi
 
-Welcome to the umbrellaplug.github.io
+Fork personal del addon [Umbrella](https://github.com/umbrellaplug/umbrellaplug.github.io) mantenido por [@PTYBrainhack507](https://github.com/PTYBrainhack507).
 
-Compatible with Kodi 19, 20, and 21.
+- **Plugin**: `plugin.video.umbrella` — visible en Kodi como **Brainhack** (v6.7.75.1, basado en upstream 6.7.75)
+- **Repositorio**: `repository.brainhack` v1.0.0 — apunta a este repo vía GitHub Pages
+- **Compatibilidad**: Kodi 21 (Omega). Carpetas `matrix/`, `nexus/`, `piers/` heredadas del upstream y disponibles, pero el foco activo es Omega.
 
-## Current Versions:
-Umbrella - 6.7.74
-Umbrella Repo - 2.2.6
+## Instalación en Kodi 21 (Omega)
 
-## Installation Instructions:
-From Kodi:
-System > File Manager > Select Add Source
+1. **Permitir orígenes desconocidos**: Ajustes → Sistema → Add-ons → activar *Orígenes desconocidos*.
+2. **Añadir la fuente**: Ajustes → Administrador de archivos → Añadir fuente.
+   - Ruta: `https://ptybrainhack507.github.io/Brainhack507/`
+   - Nombre: `brainhack`
+3. **Instalar el repositorio**: Add-ons → Instalar desde archivo zip → `brainhack` → `repository.brainhack-1.0.0.zip`.
+4. **Instalar el plugin**: Add-ons → Instalar desde repositorio → *Brainhack Repository* → *Add-ons de vídeo* → *Brainhack* → Instalar.
 
-For "Enter the paths or browse for the media locations" select "None" and input:
+A partir de acá Kodi descargará automáticamente las actualizaciones que publiques en este repo.
 
-**https://umbrellaplug.github.io**
+## Setup mínimo del addon
 
-Then Select Done. For "Enter a name for this media source" input "Umbrella" or whatever you would like to name the source.
-Click Ok.
+Brainhack necesita al menos un servicio externo (debrid o cloud) para funcionar — viene del comportamiento upstream de Umbrella. Soportado:
 
-From the Kodi Homescreen select "Add-ons".
-At the top on the left hand side select the box icon under "Add-ons" (Add-on Browser).
+- **Debrid**: Real-Debrid, All-Debrid, Premiumize, TorBox, OffCloud
+- **Cloud / otros**: Easynews, Plex, Google Drive
+- **Trakt** (opcional, recomendado para listas y sincronización)
 
-Install the Umbrella repository by clicking on Install from Zip File then "Umbrella" then repository.umbrella-x-x-x.zip and waiting for the repository installed icon to appear in the top right corner.
+Configurá en *Tools → Settings → Accounts* dentro del addon.
 
-Select "Install From Repository" then Umbrella Repo then Video Add-ons then Umbrella. Click on Install and wait for the Add-on Enabled Notification.
+## Estructura del repo
 
-## Setup Instructions
+```
+.
+├── repository.brainhack-1.0.0.zip   ← bootstrap zip (instalación inicial)
+├── omega/                            ← addons para Kodi 21
+│   ├── plugin.video.umbrella/        ← código fuente del plugin (editable)
+│   └── zips/                         ← zips + addons.xml servidos al repo
+│       ├── addons.xml
+│       ├── addons.xml.md5
+│       ├── plugin.video.umbrella/
+│       └── repository.brainhack/
+├── nexus/, matrix/, piers/           ← heredado del upstream, sin tocar
+└── .tools/build_repo.py              ← script de empaquetado (uv run --python 3.12)
+```
 
-From the main menu, navigate to Tools > Settings > Trakt
-Follow the onscreen instructions and authorize Trakt.
+## Workflow de cambios
 
-Next add any debrid services you use and follow the on-screen instructions.
-Currently Supported Debrid Providers:
-- All Debrid
-- Real Debrid
-- Premiumize
-- TorBox
-- OffCloud
+```bash
+# 1. Editás lo que quieras en omega/plugin.video.umbrella/
+# 2. Bumpeás <version> en omega/plugin.video.umbrella/addon.xml
+# 3. Regenerás zips + addons.xml + md5
+uv run --python 3.12 .tools/build_repo.py
+# 4. Commit + push — Kodi verá la nueva versión en la próxima sync (24h o forzada)
+git add -A && git commit -m "..." && git push
+```
 
-Currently Supported Other Providers:
-- Easynews
-- Plex
-- Google Drive
+Para forzar update en Kodi: Add-ons → Mis Add-ons → Brainhack → Actualizar.
 
-**The plugin will not work without at least 1 of these types of accounts**
+## Créditos
 
-## Issues
-Please do not mention any other addons in issues. Any issue opened for Fen Lite will be closed immediately. No work will be done on Fen Lite, it is only being hosted.
-
-## Logs
-Enable Logs: Go to Umbrella settings and select Debugging on the left hand side.
-Set your settings like this:
-![Screen Sho](https://user-images.githubusercontent.com/107957815/177895894-eb3f68cb-cd83-4d05-b033-6588579f2ce5.png)
-
-## FAQ
-
-**Q:** After setting up, I'm getting "No Sources Found"
-
-**A:** Umbrella only searches your cloud from Providers you have entered. For additional sources, external providers can be installed. Umbrella does not offer support for any external providers.
-
-
-**Q:** Do you take feature requests?
-
-**A:** Some yes. Open an issue and use the feature request template.
-
-
-[Setup Instructions](https://github.com/umbrellaplug/umbrellaplug.github.io/wiki#setup-instructions)
+- [Umbrella](https://github.com/umbrellaplug/umbrellaplug.github.io) — upstream.
+- [Estuary](https://github.com/xbmc/xbmc) — base del skin Umbrestuary.
+- Licencia: GPL v3 (heredada).

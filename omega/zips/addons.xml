@@ -1,5 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.video.umbrella" name="Umbrella" provider-name="Umbrella" version="6.7.75">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.umbrella" name="Brainhack" provider-name="Brainhack507" version="6.7.75.1">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
@@ -219,13 +220,15 @@
 	<extension point="xbmc.python.module" library="resources/lib/" />
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>true</reuselanguageinvoker>
-		<summary lang="en">[B]Umbrella[/B] - We do not host any of the contents streamed</summary>
-		<description lang="en">[B]Umbrella[/B][CR] This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.[CR]The author does not host any of the content in this addon and takes no responsibility for content found. We do not know anything about a lab under Raccoon City. Umbrella is not actually an umbrella and will not shield you from rain.</description>
+		<summary lang="en">[B]Brainhack[/B] - Fork personal de Umbrella. No alojamos ningún contenido.</summary>
+		<description lang="en">[B]Brainhack[/B][CR] Fork personal del addon Umbrella mantenido por Brainhack507. Este addon no forma parte de Kodi Media Centre — no busques soporte en los canales oficiales de Kodi.[CR]El autor no aloja ninguno del contenido encontrado por este addon y no se responsabiliza por el mismo. Úsalo bajo tu propio riesgo.</description>
+		<summary lang="es">[B]Brainhack[/B] - Fork personal de Umbrella. No alojamos ningún contenido.</summary>
+		<description lang="es">[B]Brainhack[/B][CR] Fork personal del addon Umbrella mantenido por Brainhack507. Úsalo bajo tu propio riesgo.</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum />
-		<website>https://umbrellaplug.github.io</website>
-		<source>https://raw.githubusercontent.com/umbrellaplug/umbrellaplug.github.io/</source>
+		<website>https://ptybrainhack507.github.io/Brainhack507</website>
+		<source>https://github.com/PTYBrainhack507/Brainhack507</source>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
 		<assets>
 			<icon>icon.png</icon>
@@ -235,25 +238,30 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B]Update - v6.7.75 - May 14th, 2026 [/B]
+[B]Brainhack v6.7.75.1 - 2026-05-23[/B]
+--[Fork] Rebrandeado por Brainhack507 a partir de Umbrella v6.7.75
+--[Change] Repositorio propio hosteado en https://ptybrainhack507.github.io/Brainhack507/
+
+[B]Upstream Umbrella v6.7.75 - May 14th, 2026[/B]
 --[Fix] Change for case sensitivity on hash comparison in Torbox. -credit to SoMe0nE-BG
 --[Change] Added option to add year in tv show title. Settings, TV Shows, Show Year in TV Show title
 		</news>
 	</extension>
 
-</addon><addon id="plugin.video.youtube" name="YouTube" version="7.2.0+beta.5" provider-name="anxdpanic, bromix, MoojMidge">
+</addon>
+<addon id="plugin.video.youtube" name="YouTube" version="7.2.0+beta.5" provider-name="anxdpanic, bromix, MoojMidge">
     <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" version="2.27.1" />
-        <import addon="inputstream.adaptive" version="19.0.0" />
-        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true" />
-        <import addon="script.module.pysocks" optional="true" />
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.27.1"/>
+        <import addon="inputstream.adaptive" version="19.0.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
+        <import addon="script.module.pysocks" optional="true"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/plugin.py">
         <provides>video</provides>
     </extension>
-    <extension point="xbmc.service" library="resources/lib/service.py" />
-    <extension point="xbmc.python.module" library="resources/lib/" />
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.python.script" library="resources/lib/script.py">
         <provides>executable</provides>
     </extension>
@@ -308,7 +316,7 @@
         <description lang="es_ES">YouTube es uno de los sitios web para compartir vídeos más grandes del mundo.</description>
         <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
         <description lang="fi_FI">YouTube on yksi maailman suurimmista videoiden jakosivustoista.</description>
-        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <description lang="fr_FR">YouTube est l&apos;un des plus grands sites de partage vidéos du monde.</description>
         <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
         <description lang="hr_HR">YouTube je jedna od najvećih stranica za dijeljenje video sadržaja na svijetu.</description>
         <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
@@ -337,7 +345,7 @@
         <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
         <disclaimer lang="es_MX">Este complemento no está respaldado por Google</disclaimer>
         <disclaimer lang="fi_FI">Google ei tue tätä lisäosaa</disclaimer>
-        <disclaimer lang="fr_FR">Ce module n'est pas validé par Google</disclaimer>
+        <disclaimer lang="fr_FR">Ce module n&apos;est pas validé par Google</disclaimer>
         <disclaimer lang="hr_HR">Ovaj dodatak nije podržan od strane Googlea</disclaimer>
         <disclaimer lang="id_ID">Plugin ini tidak didukung oleh Google</disclaimer>
         <disclaimer lang="it_IT">Questo plugin non è approvato da Google</disclaimer>
@@ -355,12 +363,37 @@
         <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
         <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
-</addon><addon id="script.umbrestuary.helper" name="Umbrestuary Helper" version="0.6.16" provider-name="Tikipeter, Ivar Brandt">
+</addon>
+<addon id="repository.brainhack" name="Brainhack Repository" version="1.0.0" provider-name="Brainhack507">
+    <extension point="xbmc.addon.repository" name="Brainhack Repository">
+        <dir minversion="20.90.0">
+            <info compressed="false">https://ptybrainhack507.github.io/Brainhack507/omega/zips/addons.xml</info>
+            <checksum>https://ptybrainhack507.github.io/Brainhack507/omega/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://ptybrainhack507.github.io/Brainhack507/omega/zips/</datadir>
+        </dir>
+        <dir minversion="19.8.0" maxversion="20.89.0">
+            <info compressed="false">https://ptybrainhack507.github.io/Brainhack507/nexus/zips/addons.xml</info>
+            <checksum>https://ptybrainhack507.github.io/Brainhack507/nexus/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://ptybrainhack507.github.io/Brainhack507/nexus/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Brainhack Repository</summary>
+        <description>Fork personal del repo Umbrella mantenido por Brainhack507.</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+<addon id="script.umbrestuary.helper" name="Umbrestuary Helper" version="0.6.16" provider-name="Tikipeter, Ivar Brandt">
     <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" version="2.19.1" />
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.19.1"/>
     </requires>
-    <extension point="xbmc.python.library" library="resources/lib/default.py" />
+    <extension point="xbmc.python.library" library="resources/lib/default.py"/>
     <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
         <news />
@@ -376,7 +409,9 @@
         <description lang="en_NZ">Umbrestuary Helper for the Umbrestuary Skin.</description>
         <description lang="en_US">Umbrestuary Helper for the Umbrestuary Skin.</description>
     </extension>
-</addon><addon id="skin.umbrestuary" version="1.0.20" name="Umbrestuary" provider-name="Ivar Brandt, Umbrella">
+</addon>
+<addon id="skin.umbrestuary" version="1.0.20" name="Umbrestuary"
+	provider-name="Ivar Brandt, Umbrella">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.umbrestuary.helper" />
@@ -417,4 +452,5 @@
 		<description lang="en_NZ">Umbrestuary is a modified version of the default Estuary skin for Kodi Nexus. It is intended for use only with Umbrella.[CR][CR]See [B]CHANGELOG[/B] located in Skin settings » Extra info for latest changes.</description>
 		<description lang="en_US">Umbrestuary is a modified version of the default Estuary skin for Kodi Nexus. It is intended for use only with Umbrella.[CR][CR]See [B]CHANGELOG[/B] located in Skin settings » Extra info for latest changes.</description>
 	</extension>
-</addon></addons>
+</addon>
+</addons>
